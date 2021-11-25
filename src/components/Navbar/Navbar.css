@@ -1,0 +1,58 @@
+.Navbar {
+  background-color: rgb(243, 146, 243);
+  width: 100%;
+  font-family: "Cairo", sans-serif;
+  font-family: "Gluten", cursive;
+  font-family: "Poppins", sans-serif;
+}
+
+.Navbar .container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Navbar h1:hover {
+  cursor: pointer;
+}
+
+.Navbar nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-family: "Cairo", sans-serif;
+  font-family: "Gluten", cursive;
+  font-family: "Poppins", sans-serif;
+  padding-right: 7px;
+  padding-left: 7px;
+}
+
+.Navbar nav a:hover {
+  color: rgb(75, 255, 75);
+}
+
+@media screen and (min-width: 768px) {
+  .Navbar nav a {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Navbar .container {
+    max-width: 1000px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .Navbar nav a {
+    padding-left: 25px;
+    font-size: 1rem;
+  }
+}
