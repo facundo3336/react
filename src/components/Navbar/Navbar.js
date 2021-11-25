@@ -10,6 +10,9 @@ export const Navbar = () => {
           <a href="./">Tarjetas de Video</a>
           <a href="./">Comics</a>
           <a href="./">Consolas</a>
+          <a href="./">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
         </nav>
       </div>
     </header>

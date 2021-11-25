@@ -42,6 +42,10 @@
     padding-right: 15px;
     font-size: 0.9rem;
   }
+
+  .Navbar nav a:last-child {
+    font-size: 1.1rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
