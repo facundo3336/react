@@ -16,6 +16,10 @@ export const CountButton = ({ stock, initial }) => {
     }
   }
 
+  function countAlert() {
+    alert(`La cantidad de items en su carrito es: ` + countNumber);
+  }
+
   return (
     <div className="CountButton">
       <span>Remera</span>
@@ -28,6 +32,9 @@ export const CountButton = ({ stock, initial }) => {
           <i class="fas fa-plus"></i>
         </button>
       </div>
+      <button className="cartButton" onClick={countAlert}>
+        Agregar al carrito
+      </button>
     </div>
   );
 };
