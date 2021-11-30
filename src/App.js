@@ -1,12 +1,12 @@
 import "./App.css";
-import { CountButton } from "./components/CountButton/CountButton";
-import { Navbar } from "./components/Navbar/Navbar";
+import { CountButton } from "./components/itemCount/itemCount.js";
+import { Navbar } from "./components/Navbar/Navbar.js";
 
 function App() {
   return (
     <>
       <Navbar />
-      <CountButton />
+      <CountButton stock={8} initial={1} />
     </>
   );
 }
