@@ -1,5 +1,11 @@
 import "./ItemListContainer.css";
+import { ItemList } from "../ItemList/ItemList.js";
+import { useEffect, useState } from "react";
 
-export const ItemListContainer = ({ greeting }) => {
-  return <h2>{greeting}</h2>;
+export const ItemListContainer = ({}) => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {});
+
+  return <ItemList items={items} />;
 };
