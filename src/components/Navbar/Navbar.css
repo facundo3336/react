@@ -17,6 +17,11 @@
   align-items: center;
 }
 
+.navbarTitle {
+  text-decoration: none;
+  color: black;
+}
+
 .Navbar h1:hover {
   cursor: pointer;
 }
@@ -37,12 +42,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .Navbar nav a {
-    padding-left: 15px;
-    padding-right: 15px;
-    font-size: 0.9rem;
-  }
-
   .Navbar nav a:last-child {
     font-size: 1.1rem;
   }

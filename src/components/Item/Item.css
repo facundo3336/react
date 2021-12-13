@@ -3,6 +3,11 @@
   height: 260px;
 }
 
+.viewDetailsLink {
+  text-decoration: none;
+  color: white;
+}
+
 .itemContainer {
   width: 250px;
   font-family: "Cairo", sans-serif;
@@ -46,5 +51,9 @@
 .viewDetails:hover {
   cursor: pointer;
   background-color: white;
+}
+
+.viewDetails:hover .viewDetailsLink {
+  cursor: pointer;
   color: rgb(243, 146, 243);
 }
