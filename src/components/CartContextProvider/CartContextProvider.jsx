@@ -4,6 +4,14 @@ import { CartContext } from "../../Context/CartContext";
 export const CartContextProvider = ({ children }) => {
   const [lines, setLines] = useState([]);
 
+  function getTotal() {
+    let total = 0;
+    lines.forEach((line) => {
+      total = total + line.item.price * line.quantity;
+    });
+    return Math.ceil(total);
+  }
+
   function addItem(item, quantity) {
     const lineIndex = lines.findIndex((line) => {
       return line.item.id === item.id;
@@ -47,6 +55,8 @@ export const CartContextProvider = ({ children }) => {
       value={{
         lines,
         addItem,
+        removeItem,
+        getTotal,
       }}
     >
       {children}

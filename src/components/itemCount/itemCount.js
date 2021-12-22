@@ -6,11 +6,11 @@ export const CountButton = ({ count, increase, decrease }) => {
     <div className="CountButton">
       <div className="container">
         <button onClick={decrease}>
-          <i class="fas fa-minus"></i>
+          <i className="fas fa-minus"></i>
         </button>
         <span id="countNumber">{count}</span>
         <button onClick={increase}>
-          <i class="fas fa-plus"></i>
+          <i className="fas fa-plus"></i>
         </button>
       </div>
     </div>

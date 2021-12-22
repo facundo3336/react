@@ -34,7 +34,7 @@ export const ItemDetail = ({ item }) => {
         <h2>{item.title}</h2>
         <p className="detailsDescription">{item.description}</p>
         <Link className="itemPrice" to={"/"}>
-          <span>{item.price * count}</span>
+          <span>U$S {item.price * count}</span>
         </Link>
         {!addToCartPressed && (
           <CountButton
@@ -48,7 +48,7 @@ export const ItemDetail = ({ item }) => {
             Agregar al carrito
           </button>
         )}
-        <Link to={"/cart"}>
+        <Link to={"/cart"} className="detailsButtonContainer">
           {addToCartPressed && (
             <button className="detailsButton">Terminar compra</button>
           )}

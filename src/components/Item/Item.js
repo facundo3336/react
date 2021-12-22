@@ -7,12 +7,11 @@ export const Item = ({ item }) => {
       <img className="itemImg" src={item.pictureUrl} />
       <h2>{item.title}</h2>
       <p>{item.description}</p>
-      <span>{item.price}</span>
-      <a className="viewDetails">
-        <Link className="viewDetailsLink" to={"/item/" + item.id}>
-          Ver detalles
-        </Link>
-      </a>
+      <span>U$S {item.price}</span>
+
+      <Link className="viewDetails" to={"/item/" + item.id}>
+        Ver detalles
+      </Link>
     </div>
   );
 };

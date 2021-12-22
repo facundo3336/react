@@ -6,10 +6,31 @@
   font-family: "Poppins", sans-serif;
 }
 
+.cartIcon {
+  display: inline-block;
+}
+
+.cartIcon i {
+  margin-right: 5px;
+}
+
+.cartIcon span {
+  background-color: white;
+  color: black;
+  font-family: "Cairo", sans-serif;
+  font-family: "Gluten", cursive;
+  font-family: "Poppins", sans-serif;
+  width: 18px;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  font-weight: 600;
+}
+
 .Navbar .container {
   padding-top: 20px;
   padding-bottom: 20px;
-  max-width: 600px;
+  max-width: 300px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -45,6 +66,14 @@
   .Navbar nav a:last-child {
     font-size: 1.1rem;
   }
+
+  .Navbar .container {
+    max-width: 600px;
+  }
+
+  .Navbar .container nav {
+    width: 400px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -52,6 +81,10 @@
     max-width: 1000px;
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .Navbar .container nav {
+    width: 500px;
   }
 
   .Navbar nav a {

@@ -8,6 +8,10 @@
   padding-bottom: 10px;
 }
 
+.detailsButtonContainer {
+  text-decoration: none;
+}
+
 .detailsButton {
   border: 1px solid rgb(243, 146, 243);
   padding: 5px 25px;
@@ -17,6 +21,8 @@
   border-radius: 5px;
   margin-top: 25px;
   background-color: white;
+  display: block;
+  margin: 25px auto 0 auto;
 }
 
 .detailsButton:hover {
@@ -68,6 +74,10 @@
   .itemDetailContainer {
     flex-direction: row;
     padding-left: 40px;
+  }
+
+  .detailsButton {
+    margin: 25px auto 0 0;
   }
 
   .detailsInfo {

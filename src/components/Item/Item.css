@@ -46,6 +46,7 @@
   margin-top: 10px;
   border-radius: 5px;
   border: 1px solid rgb(243, 146, 243);
+  text-decoration: none;
 }
 
 .viewDetails:hover {
