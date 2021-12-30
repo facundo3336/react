@@ -1,16 +1,21 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { getItem } from "../../data";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
+import { doc, getFirestore, getDoc } from "firebase/firestore";
 
 export const ItemDetailsContainer = ({}) => {
   const { id } = useParams();
   const [item, setItem] = useState(null);
 
-  useEffect(() => {
-    getItem(id).then((response) => {
-      setItem(response);
-    });
+  useEffect(async () => {
+    const db = getFirestore();
+    const docRef = doc(db, "items", id);
+    const docSnap = await getDoc(docRef);
+    const item = {
+      ...docSnap.data(),
+      id: docSnap.id,
+    };
+    setItem(item);
   }, []);
 
   if (item === null) {

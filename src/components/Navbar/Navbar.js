@@ -26,6 +26,8 @@ export const Navbar = () => {
 
           <Link to="/category/3">Comics</Link>
 
+          <Link to="/category/4">Consolas</Link>
+
           <Link to={"/cart"}>
             <div className="cartIcon">
               <i className="fas fa-shopping-cart"></i>
