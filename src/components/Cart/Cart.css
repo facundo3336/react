@@ -1,0 +1,107 @@
+.productImg {
+  width: 130px;
+  height: 220px;
+}
+
+.product {
+  text-align: center;
+  display: flex;
+  margin: 20px auto;
+  justify-content: center;
+  font-family: "Cairo", sans-serif;
+  font-family: "Gluten", cursive;
+  font-family: "Poppins", sans-serif;
+  border: 1px solid rgb(243, 146, 243);
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 10px 15px;
+}
+
+.productDescription {
+  width: 200px;
+}
+
+.productPrice {
+  display: block;
+  font-weight: 600;
+  border: 1px solid black;
+  width: 100px;
+  text-align: center;
+  margin: 20px auto;
+  border-radius: 5px;
+  border: none;
+  color: rgb(255, 147, 255);
+}
+
+.removeButton {
+  display: block;
+  margin: 10px auto;
+  background-color: rgb(255, 147, 255);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-family: "Cairo", sans-serif;
+  font-family: "Gluten", cursive;
+  font-family: "Poppins", sans-serif;
+}
+
+.totalContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.totalContainer span {
+  font-family: "Cairo", sans-serif;
+  font-family: "Gluten", cursive;
+  font-family: "Poppins", sans-serif;
+  border: 1px solid rgb(255, 147, 255);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.continueShopping {
+  display: block;
+  margin: 10px auto;
+  background-color: white;
+  border: 1px solid rgb(255, 147, 255);
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-family: "Cairo", sans-serif;
+  font-family: "Gluten", cursive;
+  font-family: "Poppins", sans-serif;
+}
+
+.continueShoppingContainer {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  .cartContainer {
+    display: flex;
+    justify-content: space-between;
+    max-width: 700px;
+    margin: 20px auto;
+  }
+
+  .totalContainer {
+    height: 80px;
+    width: 170px;
+    display: flex;
+    align-items: center;
+  }
+
+  .totalContainer span {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .product {
+    width: 450px;
+  }
+
+  .product:first-child {
+    margin-top: 15px;
+  }
+}
