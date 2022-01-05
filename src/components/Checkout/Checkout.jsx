@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Button } from "../Button/Button";
+import { Button } from "components/Button/Button";
 import "./Checkout.css";
-import { CartContext } from "../../Context/CartContext";
+import { CartContext } from "Context/CartContext";
 import { useContext } from "react";
-import { shippingCostFor } from "../../utils/shipping";
-import { CheckoutForm } from "../CheckoutForm/CheckoutForm";
+import { shippingCostFor } from "utils/shipping";
+import { CheckoutForm } from "components/CheckoutForm/CheckoutForm";
 import {
   collection,
   addDoc,

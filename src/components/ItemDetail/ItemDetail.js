@@ -1,8 +1,8 @@
-import { CountButton } from "../itemCount/itemCount";
+import { CountButton } from "components/itemCount/itemCount";
 import "./ItemDetail.css";
 import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
-import { CartContext } from "../../Context/CartContext";
+import { CartContext } from "Context/CartContext";
 
 export const ItemDetail = ({ item }) => {
   const cartContext = useContext(CartContext);

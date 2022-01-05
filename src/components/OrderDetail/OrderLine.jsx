@@ -1,4 +1,4 @@
-import { useItem } from "../../hooks/item";
+import { useItem } from "hooks/item";
 
 export const OrderLine = ({ line }) => {
   const item = useItem(line.productId);

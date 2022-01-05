@@ -1,7 +1,7 @@
-import { useParams } from "react-router";
-import { ItemDetail } from "../ItemDetail/ItemDetail";
+import { useParams } from "react-router-dom";
+import { ItemDetail } from "components/ItemDetail/ItemDetail";
 
-import { useItem } from "../../hooks/item";
+import { useItem } from "hooks/item";
 
 export const ItemDetailsContainer = ({}) => {
   const { id } = useParams();

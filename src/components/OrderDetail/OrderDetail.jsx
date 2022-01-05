@@ -1,5 +1,5 @@
-import { updateOrder } from "../../utils/order";
-import { Button } from "../Button/Button";
+import { updateOrder } from "utils/order";
+import { Button } from "components/Button/Button";
 import "./OrderDetail.css";
 import { OrderLine } from "./OrderLine";
 

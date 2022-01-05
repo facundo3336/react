@@ -1,5 +1,3 @@
-import { itemsCountFor } from "../../utils/order";
-
 export const ItemsTable = ({ items }) => {
   return (
     <table>

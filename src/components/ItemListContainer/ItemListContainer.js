@@ -1,5 +1,5 @@
 import "./ItemListContainer.css";
-import { ItemList } from "../ItemList/ItemList.js";
+import { ItemList } from "components/ItemList/ItemList.js";
 import { useEffect, useState } from "react";
 
 import {

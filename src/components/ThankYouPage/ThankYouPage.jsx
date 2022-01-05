@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import { useOrder } from "../../hooks/order";
-import { ItemsTable } from "../ItemsTable/ItemsTable";
+import { useOrder } from "hooks/order";
+import { ItemsTable } from "components/ItemsTable/ItemsTable";
 import "./ThankYouPage.css";
 
 export const ThankYouPage = ({}) => {

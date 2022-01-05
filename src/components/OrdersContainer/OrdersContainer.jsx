@@ -1,6 +1,6 @@
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { Order } from "../Oder/Order";
+import { Order } from "components/Oder/Order";
 import "./OrdersContainer.css";
 
 export const OrdersContainer = ({}) => {

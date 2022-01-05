@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { itemsCountFor } from "../../utils/order";
+import { itemsCountFor } from "utils/order";
 import "./Order.css";
 
 export const Order = ({ order }) => {
@@ -12,7 +12,7 @@ export const Order = ({ order }) => {
           {order.buyer && order.buyer.name}{" "}
           {order.buyer && order.buyer.lastName}
         </td>
-        <td>{order.date}</td>
+        <td>{order.date.toDate().toISOString()}</td>
         <td>{itemsCount}</td>
         <td>U$S{order.total}</td>
       </Link>

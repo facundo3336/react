@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { shippingCostFor } from "../../utils/shipping";
+import { shippingCostFor } from "utils/shipping";
 import "./CheckoutForm.css";
 
 export const CheckoutForm = ({ order, setOrder }) => {
