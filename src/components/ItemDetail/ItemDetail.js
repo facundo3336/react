@@ -9,13 +9,15 @@ export const ItemDetail = ({ item }) => {
   const [count, setCount] = useState(1);
   const [addToCartPressed, setAddToCartPressed] = useState(false);
 
+  const stock = item.stock - cartContext.quantityFor(item);
+
   function addToCart() {
     setAddToCartPressed(true);
     cartContext.addItem(item, count);
   }
 
   function increaseCount() {
-    if (count < item.stock) {
+    if (count < stock) {
       setCount(count + 1);
     }
   }
@@ -35,16 +37,16 @@ export const ItemDetail = ({ item }) => {
       <div className="detailsInfo">
         <h2>{item.title}</h2>
         <p className="detailsDescription">{item.description}</p>
-        <span className="itemPrice">U$S {item.price * count}</span>
+        <span className="itemPrice">U$S {(item.price * count).toFixed(2)}</span>
         <div className="detailsCountButtonContainer">
-          {!addToCartPressed && (
+          {!addToCartPressed && stock > 0 && (
             <CountButton
               increase={increaseCount}
               decrease={decreaseCount}
               count={count}
             />
           )}
-          {!addToCartPressed && (
+          {!addToCartPressed && stock > 0 && (
             <button onClick={addToCart} className="detailsButton">
               Agregar al carrito
             </button>
@@ -56,7 +58,7 @@ export const ItemDetail = ({ item }) => {
           </Link>
         </div>
 
-        <span className="pinkButton">Quedan {item.stock} unidades</span>
+        <span className="pinkButton">Quedan {stock} unidades</span>
       </div>
     </div>
   );

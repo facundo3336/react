@@ -50,6 +50,14 @@ export const CartContextProvider = ({ children }) => {
     }
   }
 
+  function quantityFor(item) {
+    const line = lines.find((line) => {
+      return line.item.id === item.id;
+    });
+
+    return line ? line.quantity : 0;
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -58,6 +66,7 @@ export const CartContextProvider = ({ children }) => {
         removeItem,
         getTotal,
         clearLines,
+        quantityFor,
       }}
     >
       {children}
