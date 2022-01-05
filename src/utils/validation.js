@@ -1,16 +1,15 @@
-const ORDER_REQUIRED_FIELDS = ["email"];
-const SHIPPING_REQUIRED_FIELDS = [
+const ORDER_REQUIRED_FIELDS = ["email", "shippingCost"];
+const BUYER_REQUIRED_FIELDS = [
   "name",
   "lastName",
   "address",
   "city",
   "country",
-  "cost",
 ];
 
 export function validateOrder(order) {
-  SHIPPING_REQUIRED_FIELDS.forEach((field) => {
-    if (order.shipping[field] === "") {
+  BUYER_REQUIRED_FIELDS.forEach((field) => {
+    if (order.buyer[field] === "") {
       throw new Error(`Falta campo obligatorio: ` + field);
     }
   });

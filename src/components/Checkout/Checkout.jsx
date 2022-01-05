@@ -5,29 +5,35 @@ import { CartContext } from "../../Context/CartContext";
 import { useContext } from "react";
 import { shippingCostFor } from "../../utils/shipping";
 import { CheckoutForm } from "../CheckoutForm/CheckoutForm";
-import { collection, addDoc, getFirestore } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  getFirestore,
+  Timestamp,
+} from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { validateOrder } from "../../utils/validation";
+import { updateStock } from "../../utils/order";
 
 export const Checkout = ({}) => {
   const cart = useContext(CartContext);
   const navigate = useNavigate();
 
   const [order, setOrder] = useState({
-    email: "",
-    shipping: {
+    shippingCost: shippingCostFor("Uruguay"),
+    buyer: {
       name: "",
       lastName: "",
+      email: "",
       address: "",
       city: "Montevideo",
       country: "Uruguay",
       phone: "",
-      cost: shippingCostFor("Uruguay"),
     },
   });
 
   const cartTotal = cart.getTotal();
-  const orderTotal = cartTotal + order.shipping.cost;
+  const orderTotal = cartTotal + order.shippingCost;
 
   async function handleClick() {
     try {
@@ -35,20 +41,25 @@ export const Checkout = ({}) => {
 
       const db = getFirestore();
 
+      const items = cart.lines.map((line) => {
+        return {
+          name: line.item.title,
+          price: line.item.price,
+          productId: line.item.id,
+          quantity: line.quantity,
+        };
+      });
       const docRef = await addDoc(collection(db, "orders"), {
         ...order,
         subTotal: cartTotal,
         total: orderTotal,
-        date: new Date().toISOString(),
-        lines: cart.lines.map((line) => {
-          return {
-            productId: line.item.id,
-            quantity: line.quantity,
-          };
-        }),
+        date: Timestamp.fromDate(new Date()),
+        items,
       });
       if (docRef.id) {
-        navigate("/thankyou");
+        updateStock(items);
+        navigate(`/thankyou/${docRef.id}`);
+
         cart.clearLines();
       }
     } catch (error) {
@@ -68,7 +79,7 @@ export const Checkout = ({}) => {
             </tr>
             <tr>
               <td>Shipping</td>
-              <td>U$S {order.shipping.cost}</td>
+              <td>U$S {order.shippingCost}</td>
             </tr>
             <tr>
               <td>Total</td>

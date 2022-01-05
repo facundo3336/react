@@ -3,18 +3,11 @@ import { shippingCostFor } from "../../utils/shipping";
 import "./CheckoutForm.css";
 
 export const CheckoutForm = ({ order, setOrder }) => {
-  function handleEmailInputChange(e) {
+  function handleBuyerInputChange(e, key) {
     setOrder({
       ...order,
-      email: e.target.value,
-    });
-  }
-
-  function handleShippingInputChange(e, key) {
-    setOrder({
-      ...order,
-      shipping: {
-        ...order.shipping,
+      buyer: {
+        ...order.buyer,
         [key]: e.target.value,
       },
     });
@@ -23,10 +16,10 @@ export const CheckoutForm = ({ order, setOrder }) => {
   function handleCountryInputChange(e) {
     setOrder({
       ...order,
-      shipping: {
-        ...order.shipping,
+      shippingCost: shippingCostFor(e.target.value),
+      buyer: {
+        ...order.buyer,
         country: e.target.value,
-        cost: shippingCostFor(e.target.value),
       },
     });
   }
@@ -35,8 +28,8 @@ export const CheckoutForm = ({ order, setOrder }) => {
     <form>
       <h5>Información de Contacto</h5>
       <input
-        onChange={handleEmailInputChange}
-        value={order.email}
+        onChange={(e) => handleBuyerInputChange(e, "email")}
+        value={order.buyer.email}
         className="formControl"
         type="email"
         placeholder="Email"
@@ -44,36 +37,36 @@ export const CheckoutForm = ({ order, setOrder }) => {
       <h5>Dirección de envío</h5>
       <div className="shippingAddress">
         <input
-          onChange={(e) => handleShippingInputChange(e, "name")}
-          value={order.shipping.name}
+          onChange={(e) => handleBuyerInputChange(e, "name")}
+          value={order.buyer.name}
           className="formControl"
           type="text"
           placeholder="First Name"
         />
         <input
-          onChange={(e) => handleShippingInputChange(e, "lastName")}
-          value={order.shipping.lastName}
+          onChange={(e) => handleBuyerInputChange(e, "lastName")}
+          value={order.buyer.lastName}
           className="formControl"
           type="text"
           placeholder="Last Name"
         />
         <input
-          onChange={(e) => handleShippingInputChange(e, "address")}
-          value={order.shipping.address}
+          onChange={(e) => handleBuyerInputChange(e, "address")}
+          value={order.buyer.address}
           className="formControl"
           type="text"
           placeholder="Address"
         />
         <input
-          onChange={(e) => handleShippingInputChange(e, "city")}
-          value={order.shipping.city}
+          onChange={(e) => handleBuyerInputChange(e, "city")}
+          value={order.buyer.city}
           className="formControl"
           type="text"
           placeholder="City"
         />
         <select
           onChange={(e) => handleCountryInputChange(e, "country")}
-          value={order.shipping.country}
+          value={order.buyer.country}
           className="formControl"
         >
           <option>Argentina</option>
@@ -81,8 +74,8 @@ export const CheckoutForm = ({ order, setOrder }) => {
           <option>Brasil</option>
         </select>
         <input
-          onChange={(e) => handleShippingInputChange(e, "phone")}
-          value={order.shipping.phone}
+          onChange={(e) => handleBuyerInputChange(e, "phone")}
+          value={order.buyer.phone}
           className="formControl"
           type="text"
           placeholder="Phone"

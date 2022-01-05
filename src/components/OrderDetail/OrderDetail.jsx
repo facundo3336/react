@@ -36,34 +36,34 @@ export const OrderDetail = ({ order }) => {
             <caption>Detalles de envio</caption>
             <tr>
               <td>Direccion</td>
-              <td>{order.shipping && order.shipping.address}</td>
+              <td>{order.buyer && order.buyer.address}</td>
             </tr>
             <tr>
               <td>Ciudad</td>
-              <td>{order.shipping && order.shipping.city}</td>
+              <td>{order.buyer && order.buyer.city}</td>
             </tr>
             <tr>
               <td>Costo de envio</td>
-              <td>{order.shipping && order.shipping.cost}</td>
+              <td>{order.buyer && order.buyer.cost}</td>
             </tr>
             <tr>
               <td>Pais</td>
-              <td>{order.shipping && order.shipping.country}</td>
+              <td>{order.buyer && order.buyer.country}</td>
             </tr>
             <tr>
               <td>Nombre</td>
               <td>
-                {order.shipping && order.shipping.name}{" "}
-                {order.shipping && order.shipping.lastName}
+                {order.buyer && order.buyer.name}{" "}
+                {order.buyer && order.buyer.lastName}
               </td>
             </tr>
             <tr>
               <td>Celular</td>
-              <td>{order.shipping && order.shipping.phone}</td>
+              <td>{order.buyer && order.buyer.phone}</td>
             </tr>
             <tr>
               <td>Email</td>
-              <td>{order.email}</td>
+              <td>{order.buyer.email}</td>
             </tr>
             <tr>
               <td>Monto total</td>

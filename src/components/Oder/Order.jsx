@@ -9,8 +9,8 @@ export const Order = ({ order }) => {
     <tr>
       <Link to={`/admin/orders/` + order.id}>
         <td>
-          {order.shipping && order.shipping.name}{" "}
-          {order.shipping && order.shipping.lastName}
+          {order.buyer && order.buyer.name}{" "}
+          {order.buyer && order.buyer.lastName}
         </td>
         <td>{order.date}</td>
         <td>{itemsCount}</td>
