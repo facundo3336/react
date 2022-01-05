@@ -85,6 +85,21 @@
     margin: 20px auto;
   }
 
+  .checkout {
+    text-decoration: none;
+    background-color: rgb(255, 147, 255);
+    color: white;
+    padding: 5px 25px;
+    border-radius: 5px;
+    border: 1px solid rgb(255, 147, 255);
+  }
+
+  .checkout:hover {
+    color: rgb(255, 147, 255);
+    background-color: white;
+    cursor: pointer;
+  }
+
   .totalContainer {
     height: 80px;
     width: 170px;

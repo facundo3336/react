@@ -1,0 +1,16 @@
+.button {
+  border: 1px solid rgb(243, 146, 243);
+  color: white;
+  background-color: rgb(243, 146, 243);
+  padding: 5px 25px;
+  font-family: "Cairo", sans-serif;
+  font-family: "Gluten", cursive;
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
+}
+
+.button:hover {
+  color: rgb(243, 146, 243);
+  background-color: white;
+  cursor: pointer;
+}

@@ -41,8 +41,15 @@ export const Cart = ({}) => {
           );
         })}
       </div>
-      <div className="totalContainer">
-        <span>Total: U$S {cartContext.getTotal()}</span>
+      <div>
+        <div className="totalContainer">
+          <span>Total: U$S {cartContext.getTotal()}</span>
+        </div>
+        <div>
+          <Link className="checkout" to="/checkout">
+            Ir al checkout
+          </Link>
+        </div>
       </div>
     </div>
   );

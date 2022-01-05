@@ -62,9 +62,17 @@
   color: rgb(75, 255, 75);
 }
 
+.Navbar nav {
+  display: flex;
+}
+
 @media screen and (min-width: 768px) {
   .Navbar nav a:last-child {
     font-size: 1.1rem;
+  }
+
+  .Navbar nav {
+    justify-content: space-between;
   }
 
   .Navbar .container {
@@ -90,5 +98,6 @@
   .Navbar nav a {
     padding-left: 25px;
     font-size: 1rem;
+    padding: 0;
   }
 }

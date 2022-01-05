@@ -12,6 +12,13 @@
   text-decoration: none;
 }
 
+.itemDetailImage {
+  height: 200px;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .detailsButton {
   border: 1px solid rgb(243, 146, 243);
   padding: 5px 25px;
@@ -55,7 +62,7 @@
   display: block;
 }
 
-.detailsInfo span {
+.itemPrice {
   font-size: 1.2rem;
   background-color: rgb(75, 255, 75);
   padding: 5px 35px;
@@ -64,28 +71,26 @@
   font-weight: 600;
 }
 
-.detailsInfo span:hover {
-  cursor: pointer;
+.stock {
   background-color: white;
-  color: rgb(75, 255, 75);
+  color: rgb(185, 183, 183);
+  border: none;
+  font-size: 0.9rem;
+  margin-top: 15px;
+  display: block;
 }
 
 @media screen and (min-width: 768px) {
   .itemDetailContainer {
-    flex-direction: row;
     padding-left: 40px;
+  }
+
+  .itemDetailImage {
+    width: 300px;
   }
 
   .detailsButton {
     margin: 25px auto 0 0;
-  }
-
-  .detailsInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding-left: 100px;
   }
 
   .detailsDescription {
@@ -95,12 +100,32 @@
   .detailsInfo span {
     width: 90px;
   }
+
+  .detailsInfo span {
+    width: auto;
+  }
+
+  .detailsCountButtonContainer {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .itemDetailContainer {
     max-width: 1000px;
     margin: 50px auto;
+  }
+
+  .detailsInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 100px;
   }
 
   .detailsInfo {

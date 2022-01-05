@@ -57,6 +57,7 @@ export const CartContextProvider = ({ children }) => {
         addItem,
         removeItem,
         getTotal,
+        clearLines,
       }}
     >
       {children}
