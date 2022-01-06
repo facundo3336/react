@@ -12,6 +12,8 @@ import { OrderDetailContainer } from "components/OrderDetailContainer/OrderDetai
 import { Checkout } from "components/Checkout/Checkout";
 import { ThankYouPage } from "components/ThankYouPage/ThankYouPage";
 import { CreateProduct } from "components/CreateProduct/CreateProduct";
+import { CreateCoupon } from "components/CreateCoupon/CreateCoupon";
+import { Coupons } from "components/Coupons/Coupons";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
             path="/admin/orders/createProduct"
             element={<CreateProduct />}
           />
+          <Route path={"/admin/createCoupon"} element={<CreateCoupon />} />
+          <Route path={"/admin/coupons"} element={<Coupons />} />
         </Routes>
       </CartContextProvider>
     </BrowserRouter>
