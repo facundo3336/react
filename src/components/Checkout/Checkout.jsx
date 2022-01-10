@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { validateOrder } from "../../utils/validation";
 import { updateStock } from "../../utils/order";
 
-export const Checkout = ({}) => {
+export const Checkout = () => {
   const cart = useContext(CartContext);
   const navigate = useNavigate();
 

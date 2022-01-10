@@ -1,5 +1,4 @@
 import "./itemCount.css";
-import { useState } from "react";
 
 export const CountButton = ({ count, increase, decrease }) => {
   return (

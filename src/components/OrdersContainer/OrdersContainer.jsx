@@ -3,22 +3,25 @@ import { useEffect, useState } from "react";
 import { Order } from "components/Oder/Order";
 import "./OrdersContainer.css";
 
-export const OrdersContainer = ({}) => {
+export const OrdersContainer = () => {
   const [orders, setOrders] = useState([]);
 
-  useEffect(async () => {
-    const db = getFirestore();
+  useEffect(() => {
+    async function fetchData() {
+      const db = getFirestore();
 
-    const orderCollection = collection(db, "orders");
-    const querySnapshot = await getDocs(orderCollection);
-    const items = querySnapshot.docs.map((item) => {
-      return {
-        ...item.data(),
-        id: item.id,
-      };
-    });
+      const orderCollection = collection(db, "orders");
+      const querySnapshot = await getDocs(orderCollection);
+      const items = querySnapshot.docs.map((item) => {
+        return {
+          ...item.data(),
+          id: item.id,
+        };
+      });
+      setOrders(items);
+    }
 
-    setOrders(items);
+    fetchData();
   }, []);
 
   return (

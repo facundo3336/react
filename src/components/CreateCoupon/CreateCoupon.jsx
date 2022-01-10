@@ -4,7 +4,7 @@ import { validateCoupon } from "utils/validation";
 import { getFirestore, addDoc, collection } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
-export const CreateCoupon = ({}) => {
+export const CreateCoupon = () => {
   const navigate = useNavigate();
 
   const [coupon, setCoupon] = useState({
@@ -20,6 +20,13 @@ export const CreateCoupon = ({}) => {
     });
   }
 
+  function handleNumberChange(e, key) {
+    setCoupon({
+      ...coupon,
+      [key]: parseFloat(e.target.value),
+    });
+  }
+
   async function handleClick() {
     try {
       validateCoupon(coupon);
@@ -27,7 +34,7 @@ export const CreateCoupon = ({}) => {
       const db = getFirestore();
 
       const docRef = await addDoc(collection(db, "coupons"), coupon);
-      console.log(docRef);
+
       if (docRef.id) {
         navigate(`/admin/coupons`);
       }
@@ -49,7 +56,7 @@ export const CreateCoupon = ({}) => {
       <br />
       <label htmlFor="amount">Monto: </label>
       <input
-        onChange={(e) => handleChange(e, "amount")}
+        onChange={(e) => handleNumberChange(e, "amount")}
         value={coupon.amount}
         type="number"
         placeholder="25"
@@ -58,8 +65,8 @@ export const CreateCoupon = ({}) => {
       <br />
       <label htmlFor="type">Tipo de cupon: </label>
       <select value={coupon.type} onChange={(e) => handleChange(e, "type")}>
-        <option>Fixed</option>
-        <option>Percentage</option>
+        <option value="fixed">Cantidad fija</option>
+        <option value="percentage">Porcentaje</option>
       </select>
 
       <Button text={"Crear Cupon"} onClick={handleClick} />

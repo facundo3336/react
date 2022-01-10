@@ -5,7 +5,7 @@ export const Item = ({ item }) => {
   return (
     <div className="itemContainer">
       <div>
-        <img className="itemImg" src={item.pictureUrl} />
+        <img alt="itemImage" className="itemImg" src={item.pictureUrl} />
         <h2>{item.title}</h2>
       </div>
       <p>{item.description}</p>

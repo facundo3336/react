@@ -3,20 +3,24 @@ import { useParams } from "react-router-dom";
 import { OrderDetail } from "components/OrderDetail/OrderDetail";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 
-export const OrderDetailContainer = ({}) => {
+export const OrderDetailContainer = () => {
   const { id } = useParams();
   const [order, setOrder] = useState({});
 
-  useEffect(async () => {
-    const db = getFirestore();
-    const docRef = doc(db, "orders", id);
-    const docSnap = await getDoc(docRef);
-    const item = {
-      ...docSnap.data(),
-      id: docSnap.id,
-    };
-    setOrder(item);
-  }, []);
+  useEffect(() => {
+    async function fetchData() {
+      const db = getFirestore();
+      const docRef = doc(db, "orders", id);
+      const docSnap = await getDoc(docRef);
+      const item = {
+        ...docSnap.data(),
+        id: docSnap.id,
+      };
+      setOrder(item);
+    }
+
+    fetchData();
+  }, [id]);
 
   if (order === null) {
     return (

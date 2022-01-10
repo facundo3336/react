@@ -3,7 +3,7 @@ import { ItemDetail } from "components/ItemDetail/ItemDetail";
 
 import { useItem } from "hooks/item";
 
-export const ItemDetailsContainer = ({}) => {
+export const ItemDetailsContainer = () => {
   const { id } = useParams();
 
   const item = useItem(id);

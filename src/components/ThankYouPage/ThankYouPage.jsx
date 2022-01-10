@@ -3,7 +3,7 @@ import { useOrder } from "hooks/order";
 import { ItemsTable } from "components/ItemsTable/ItemsTable";
 import "./ThankYouPage.css";
 
-export const ThankYouPage = ({}) => {
+export const ThankYouPage = () => {
   const { id } = useParams();
   const order = useOrder(id);
 

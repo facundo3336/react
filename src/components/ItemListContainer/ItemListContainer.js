@@ -11,31 +11,35 @@ import {
 } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 
-export const ItemListContainer = ({}) => {
+export const ItemListContainer = () => {
   const { categoryId } = useParams();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(async () => {
-    const db = getFirestore();
+  useEffect(() => {
+    async function fetchData() {
+      const db = getFirestore();
 
-    let itemsCollection = collection(db, "items");
-    if (categoryId !== undefined) {
-      itemsCollection = query(
-        itemsCollection,
-        where("categoryId", "==", categoryId)
-      );
+      let itemsCollection = collection(db, "items");
+      if (categoryId !== undefined) {
+        itemsCollection = query(
+          itemsCollection,
+          where("categoryId", "==", categoryId)
+        );
+      }
+
+      const querySnapshot = await getDocs(itemsCollection);
+      const items = querySnapshot.docs.map((document) => {
+        return {
+          ...document.data(),
+          id: document.id,
+        };
+      });
+      setItems(items);
+      setLoading(false);
     }
 
-    const querySnapshot = await getDocs(itemsCollection);
-    const items = querySnapshot.docs.map((document) => {
-      return {
-        ...document.data(),
-        id: document.id,
-      };
-    });
-    setItems(items);
-    setLoading(false);
+    fetchData();
   }, [categoryId]);
 
   if (loading) {

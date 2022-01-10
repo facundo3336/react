@@ -5,7 +5,7 @@ import "./CreateProduct.css";
 import { getFirestore, addDoc, collection } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
-export const CreateProduct = ({}) => {
+export const CreateProduct = () => {
   const navigate = useNavigate();
 
   const [product, setProduct] = useState({

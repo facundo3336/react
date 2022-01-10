@@ -3,8 +3,9 @@ import "./Cart.css";
 import { useContext } from "react";
 import { CartContext } from "Context/CartContext";
 import { Link } from "react-router-dom";
+import { CartPricing } from "components/CartPricing/CartPricing";
 
-export const Cart = ({}) => {
+export const Cart = () => {
   const cartContext = useContext(CartContext);
 
   if (cartContext.lines.length === 0) {
@@ -22,29 +23,28 @@ export const Cart = ({}) => {
           function handleClick() {
             cartContext.removeItem(line.item.id);
           }
-
           return (
-            <>
-              <div key={line.item.id} className="product">
-                <img className="productImg" src={line.item.pictureUrl} />
+            <div key={line.item.id} className="product">
+              <img
+                alt="itemImage"
+                className="productImg"
+                src={line.item.pictureUrl}
+              />
 
-                <div className="productDescription">
-                  <h2>{line.item.title}</h2>
-                  <span className="productPrice">U$S {line.item.price}</span>
-                  <span>Cantidad: {line.quantity}</span>
-                  <button onClick={handleClick} className="removeButton">
-                    Eliminar
-                  </button>
-                </div>
+              <div className="productDescription">
+                <h2>{line.item.title}</h2>
+                <span className="productPrice">U$S {line.item.price}</span>
+                <span>Cantidad: {line.quantity}</span>
+                <button onClick={handleClick} className="removeButton">
+                  Eliminar
+                </button>
               </div>
-            </>
+            </div>
           );
         })}
       </div>
       <div>
-        <div className="totalContainer">
-          <span>Total: U$S {cartContext.getTotal()}</span>
-        </div>
+        <CartPricing />
         <div>
           <Link className="checkout" to="/checkout">
             Ir al checkout

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { shippingCostFor } from "utils/shipping";
 import "./CheckoutForm.css";
 
