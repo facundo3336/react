@@ -3,6 +3,7 @@ import { CartContext } from "Context/CartContext";
 import { useContext, useState } from "react";
 import { getDiscount } from "utils/coupons";
 import { useCoupon } from "hooks/useCoupon";
+import "./CartPricing.css";
 
 export const CartPricing = () => {
   const cartContext = useContext(CartContext);
@@ -23,12 +24,12 @@ export const CartPricing = () => {
 
   return (
     <div>
-      <div className="totalContainer">
+      <div className="totalContainer pricesContainer">
         <span>Total: U$S {total}</span>
         <span>Descuento: U$S{discount}</span>
         <span>Total con descuento: U$S{(total - discount).toFixed(2)}</span>
       </div>
-      <div>
+      <div className="cartPricesButtonsContainer">
         <input onChange={handleChange} value={couponInput} type="text" />
         <Button onClick={handleClick} text="Aplicar Cupon" />
       </div>

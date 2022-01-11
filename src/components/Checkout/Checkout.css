@@ -2,12 +2,15 @@
   display: flex;
   justify-content: space-between;
   padding-top: 50px;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .checkoutTable {
   background-color: rgb(240, 240, 240);
   padding: 50px;
   border-left: 2px solid rgb(219, 219, 219);
+  margin-bottom: 30px;
 }
 
 .checkoutTable table {
@@ -17,4 +20,14 @@
 .confirmOrder {
   margin-top: 30px;
   display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .checkoutContainer {
+    flex-direction: row;
+  }
+
+  .checkoutTable {
+    height: 400px;
+  }
 }

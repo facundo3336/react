@@ -1,3 +1,5 @@
+import "./ItemsTable.css";
+
 export const ItemsTable = ({ items }) => {
   return (
     <table>
@@ -12,7 +14,7 @@ export const ItemsTable = ({ items }) => {
       <tbody>
         {items.map((item) => {
           return (
-            <tr key={item.id}>
+            <tr key={item.productId}>
               <td>{item.name}</td>
               <td>{item.price}</td>
               <td>{item.quantity}</td>

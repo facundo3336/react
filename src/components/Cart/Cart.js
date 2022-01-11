@@ -10,9 +10,11 @@ export const Cart = () => {
 
   if (cartContext.lines.length === 0) {
     return (
-      <Link className="continueShoppingContainer" to={"/"}>
-        <button className="continueShopping">Seguir comprando</button>
-      </Link>
+      <div className="continueShoppingPage">
+        <Link className="continueShoppingContainer" to={"/"}>
+          <button className="continueShopping">Seguir comprando</button>
+        </Link>
+      </div>
     );
   }
 
@@ -45,7 +47,7 @@ export const Cart = () => {
       </div>
       <div>
         <CartPricing />
-        <div>
+        <div style={{ textAlign: "center" }}>
           <Link className="checkout" to="/checkout">
             Ir al checkout
           </Link>

@@ -1,3 +1,7 @@
+.itemDetailPage {
+  height: 100vh;
+}
+
 .itemDetailContainer {
   display: flex;
   flex-direction: column;
@@ -83,14 +87,16 @@
 @media screen and (min-width: 768px) {
   .itemDetailContainer {
     padding-left: 40px;
+    text-align: center;
   }
 
   .itemDetailImage {
     width: 300px;
+    margin: 10px auto;
   }
 
   .detailsButton {
-    margin: 25px auto 0 0;
+    margin: 0;
   }
 
   .detailsDescription {
@@ -103,6 +109,10 @@
 
   .detailsInfo span {
     width: auto;
+  }
+
+  .CountButton {
+    margin: 30px 0;
   }
 
   .detailsCountButtonContainer {
@@ -118,6 +128,18 @@
   .itemDetailContainer {
     max-width: 1000px;
     margin: 50px auto;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .detailsCountButtonContainer {
+    margin: 20px auto 20px 0;
+  }
+
+  .itemDetailImage {
+    margin: 25px auto;
+    height: 350px;
+    width: 200px;
   }
 
   .detailsInfo {

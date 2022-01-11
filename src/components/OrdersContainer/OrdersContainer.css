@@ -1,9 +1,20 @@
+.orderTableContainer {
+  width: 100%;
+  overflow: auto;
+  white-space: nowrap;
+  height: 100vh;
+}
+
 .ordersTable {
   margin: 20px auto;
   text-align: left;
   border: 1px solid black;
   width: 45%;
   padding: 20px;
+}
+
+.ordersTable thead tr th {
+  text-align: center;
 }
 
 .ordersTable table td {

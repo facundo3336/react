@@ -29,36 +29,40 @@ export const ItemDetail = ({ item }) => {
   }
 
   return (
-    <div className="itemDetailContainer">
-      <div
-        className="itemDetailImage"
-        style={{ backgroundImage: `url(${item.pictureUrl})` }}
-      ></div>
-      <div className="detailsInfo">
-        <h2>{item.title}</h2>
-        <p className="detailsDescription">{item.description}</p>
-        <span className="itemPrice">U$S {(item.price * count).toFixed(2)}</span>
-        <div className="detailsCountButtonContainer">
-          {!addToCartPressed && stock > 0 && (
-            <CountButton
-              increase={increaseCount}
-              decrease={decreaseCount}
-              count={count}
-            />
-          )}
-          {!addToCartPressed && stock > 0 && (
-            <button onClick={addToCart} className="detailsButton">
-              Agregar al carrito
-            </button>
-          )}
-          <Link to={"/cart"} className="detailsButtonContainer">
-            {addToCartPressed && (
-              <button className="detailsButton">Terminar compra</button>
+    <div className="itemDetailPage">
+      <div className="itemDetailContainer">
+        <div
+          className="itemDetailImage"
+          style={{ backgroundImage: `url(${item.pictureUrl})` }}
+        ></div>
+        <div className="detailsInfo">
+          <h2>{item.title}</h2>
+          <p className="detailsDescription">{item.description}</p>
+          <span className="itemPrice">
+            U$S {(item.price * count).toFixed(2)}
+          </span>
+          <div className="detailsCountButtonContainer">
+            {!addToCartPressed && stock > 0 && (
+              <CountButton
+                increase={increaseCount}
+                decrease={decreaseCount}
+                count={count}
+              />
             )}
-          </Link>
-        </div>
+            {!addToCartPressed && stock > 0 && (
+              <button onClick={addToCart} className="detailsButton">
+                Agregar al carrito
+              </button>
+            )}
+            <Link to={"/cart"} className="detailsButtonContainer">
+              {addToCartPressed && (
+                <button className="detailsButton">Terminar compra</button>
+              )}
+            </Link>
+          </div>
 
-        <span className="pinkButton">Quedan {stock} unidades</span>
+          <span className="pinkButton">Quedan {stock} unidades</span>
+        </div>
       </div>
     </div>
   );

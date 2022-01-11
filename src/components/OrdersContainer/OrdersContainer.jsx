@@ -25,16 +25,24 @@ export const OrdersContainer = () => {
   }, []);
 
   return (
-    <table className="ordersTable">
-      <tr>
-        <th>Nombre</th>
-        <th>Fecha</th>
-        <th>Cantidad</th>
-        <th>Total</th>
-      </tr>
-      {orders.map((order) => {
-        return <Order key={order.id} order={order} />;
-      })}
-    </table>
+    <div className="orderTableContainer">
+      <table className="ordersTable">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Fecha</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+            <th>Ir a la orden</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {orders.map((order) => {
+            return <Order key={order.id} order={order} />;
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 };

@@ -1,5 +1,10 @@
+.orderDetailPage {
+  height: 100vh;
+}
+
 .orderDetailContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding-top: 40px;
 }
@@ -24,11 +29,6 @@
   margin-top: 50px;
 }
 
-.orderDetailContainer table {
-  margin-right: 60px;
-  margin-left: 60px;
-}
-
 .orderDetailContainer table th {
   padding: 10px 15px;
 }
@@ -51,4 +51,10 @@
 }
 .orderDetailContainer table tr td:last-child {
   border-right: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .orderDetailContainer {
+    flex-direction: row;
+  }
 }

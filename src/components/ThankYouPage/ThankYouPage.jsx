@@ -35,7 +35,9 @@ export const ThankYouPage = () => {
           </ul>
         </div>
         <h3>Productos:</h3>
-        <ItemsTable items={order.items} />
+        <div className="itemsTableContainer">
+          <ItemsTable items={order.items} />
+        </div>
       </div>
     </div>
   );

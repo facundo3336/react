@@ -11,6 +11,7 @@
   font-family: "Cairo", sans-serif;
   font-family: "Gluten", cursive;
   font-family: "Poppins", sans-serif;
+  justify-content: center;
 }
 
 .countTitle {
@@ -22,6 +23,7 @@
 
 .CountButton .container {
   display: flex;
+  justify-content: center;
 }
 
 .CountButton i {

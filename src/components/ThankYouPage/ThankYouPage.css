@@ -1,4 +1,23 @@
 .thankYouPageContainer {
   max-width: 500px;
   margin: 0 auto;
+  height: 100vh;
+}
+
+.thankYouPageContainer h1,
+p,
+h3 {
+  text-align: center;
+}
+
+.itemsTableContainer {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .itemsTableContainer {
+    justify-content: left;
+  }
 }

@@ -14,6 +14,7 @@ import { ThankYouPage } from "components/ThankYouPage/ThankYouPage";
 import { CreateProduct } from "components/CreateProduct/CreateProduct";
 import { CreateCoupon } from "components/CreateCoupon/CreateCoupon";
 import { Coupons } from "components/Coupons/Coupons";
+import { Footer } from "components/Footer/Footer";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path={"/admin/createCoupon"} element={<CreateCoupon />} />
           <Route path={"/admin/coupons"} element={<Coupons />} />
         </Routes>
+        <Footer />
       </CartContextProvider>
     </BrowserRouter>
   );

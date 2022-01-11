@@ -3,6 +3,10 @@
   height: 220px;
 }
 
+.cartContainer {
+  height: 100vh;
+}
+
 .product {
   text-align: center;
   display: flex;
@@ -73,8 +77,23 @@
   font-family: "Poppins", sans-serif;
 }
 
+.continueShoppingPage {
+  height: 100vh;
+}
+
 .continueShoppingContainer {
   text-decoration: none;
+}
+
+.checkout {
+  text-decoration: none;
+  background-color: rgb(255, 147, 255);
+  color: white;
+  padding: 5px 25px;
+  border-radius: 5px;
+  border: 1px solid rgb(255, 147, 255);
+  margin: 10px auto;
+  display: inline-block;
 }
 
 @media screen and (min-width: 768px) {
@@ -85,15 +104,6 @@
     margin: 20px auto;
   }
 
-  .checkout {
-    text-decoration: none;
-    background-color: rgb(255, 147, 255);
-    color: white;
-    padding: 5px 25px;
-    border-radius: 5px;
-    border: 1px solid rgb(255, 147, 255);
-  }
-
   .checkout:hover {
     color: rgb(255, 147, 255);
     background-color: white;
@@ -101,10 +111,10 @@
   }
 
   .totalContainer {
-    height: 80px;
-    width: 170px;
     display: flex;
     align-items: center;
+    margin-top: 15px;
+    padding: 15px;
   }
 
   .totalContainer span {

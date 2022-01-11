@@ -44,11 +44,17 @@ export const ItemListContainer = () => {
 
   if (loading) {
     return (
-      <div className="loadingContainer">
-        <span>Cargando Productos</span>
+      <div className="loadingPageContainer">
+        <div className="loadingContainer">
+          <span>Cargando Productos</span>
+        </div>
       </div>
     );
   }
 
-  return <ItemList items={items} />;
+  return (
+    <div className="loadingPageContainer">
+      <ItemList items={items} />
+    </div>
+  );
 };
